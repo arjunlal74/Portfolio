@@ -24,47 +24,6 @@ const Home = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const skills = [
-    {
-      name: "Frontend Development",
-      icon: <Monitor className="w-6 h-6" />,
-      description:
-        "Crafting beautiful, responsive user interfaces with React & Next.js",
-    },
-    {
-      name: "Backend Development",
-      icon: <Server className="w-6 h-6" />,
-      description:
-        "Building robust server-side solutions with Node.js & Python",
-    },
-    {
-      name: "API Development",
-      icon: <Code className="w-6 h-6" />,
-      description:
-        "Designing and implementing RESTful APIs and GraphQL services",
-    },
-  ];
-
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      tech: ["React", "Node.js", "MongoDB"],
-      description:
-        "A full-featured online shopping platform with real-time inventory.",
-    },
-    {
-      title: "Portfolio Generator",
-      tech: ["Next.js", "Tailwind", "Prisma"],
-      description: "Dynamic portfolio creation tool for developers.",
-    },
-    {
-      title: "Task Management",
-      tech: ["TypeScript", "Redux", "Express"],
-      description:
-        "Collaborative task management system with real-time updates.",
-    },
-  ];
-
   return (
     <div className="min-h-screen  bg-[radial-gradient(circle_at_15%_30%,rgba(64,84,178,0.06)_0%,transparent_45%),radial-gradient(circle_at_85%_65%,rgba(124,45,179,0.05)_0%,transparent_45%),linear-gradient(180deg,rgba(45,45,45,0.2)_0%,rgba(33,33,33,0.5)_100%)] bg-fixed text-gray-100">
       {/* Navigation */}
