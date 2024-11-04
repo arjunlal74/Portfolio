@@ -1,87 +1,114 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code, Laptop, Terminal } from "lucide-react";
+import { Code, Laptop, Terminal, ChevronRight } from "lucide-react";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <section className="min-h-screen flex items-center px-8 overflow-hidden">
+    <section className="min-h-screen flex items-center px-8 overflow-hidden bg-gradient-to-b from-black/20 to-black/30">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className="flex flex-col justify-center"
         >
           <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block"
-            >
+            <motion.div variants={itemVariants} className="inline-block">
               <span className="px-4 py-2 rounded-full border border-teal-400/20 bg-teal-400/10 text-teal-400 text-sm">
                 Available for Work
               </span>
             </motion.div>
 
-            <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
+            <motion.h1
+              variants={itemVariants}
+              className="text-6xl lg:text-7xl font-bold leading-tight"
+            >
               Crafting Digital
               <div className="mt-2">
-                <span className="text-teal-400">Experiences</span>
+                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  Experiences
+                </span>
               </div>
-            </h1>
+            </motion.h1>
 
-            <p className="text-gray-400 text-xl leading-relaxed max-w-xl">
+            <motion.p
+              variants={itemVariants}
+              className="text-gray-400 text-xl leading-relaxed max-w-xl"
+            >
               Full-stack developer specializing in building exceptional digital
               experiences. Focused on creating elegant, efficient, and
               user-centered applications.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8"
+            >
               <button
-                className="px-8 py-4 bg-teal-400 text-gray-900 rounded-lg font-medium 
+                className="group px-8 py-4 bg-teal-400 text-gray-900 rounded-lg font-medium 
                       hover:bg-teal-300 transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Code className="w-5 h-5" />
                 View Projects
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               <button
-                className="px-8 py-4 border border-teal-400 text-teal-400 rounded-lg font-medium 
+                className="group px-8 py-4 border border-teal-400 text-teal-400 rounded-lg font-medium 
                       hover:bg-teal-400/10 transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Terminal className="w-5 h-5" />
                 Get in Touch
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
-            </div>
+            </motion.div>
 
             {/* Stats Section */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex gap-12 mt-12 pt-12 border-t border-gray-800"
+              variants={itemVariants}
+              className="flex gap-12 mt-12 pt-12 border-t border-gray-800/50"
             >
-              <div>
-                <h3 className="text-3xl font-bold">4+</h3>
-                <p className="text-gray-400">Years Experience</p>
-              </div>
-              <div>
-                <h3 className="text-3xl font-bold">50+</h3>
-                <p className="text-gray-400">Projects Completed</p>
-              </div>
-              <div>
-                <h3 className="text-3xl font-bold">20+</h3>
-                <p className="text-gray-400">Happy Clients</p>
-              </div>
+              {[
+                { value: "4+", label: "Years Experience" },
+                { value: "50+", label: "Projects Completed" },
+                { value: "20+", label: "Happy Clients" },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="group hover:bg-white/5 p-4 rounded-lg transition-colors"
+                >
+                  <h3 className="text-3xl font-bold group-hover:text-teal-400 transition-colors">
+                    {stat.value}
+                  </h3>
+                  <p className="text-gray-400">{stat.label}</p>
+                </div>
+              ))}
             </motion.div>
           </div>
         </motion.div>
 
         {/* Right Illustration */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative hidden lg:flex items-center justify-center"
         >
@@ -142,7 +169,7 @@ const Hero = () => {
             }}
             className="relative z-10"
           >
-            <div className="w-32 h-32 bg-teal-400/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <div className="w-32 h-32 bg-teal-400/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-teal-400/20">
               <Laptop className="w-16 h-16 text-teal-400" />
             </div>
           </motion.div>
@@ -160,7 +187,7 @@ const Hero = () => {
             }}
             className="absolute top-1/4 right-1/4"
           >
-            <div className="w-20 h-20 bg-teal-400/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+            <div className="w-20 h-20 bg-teal-400/10 rounded-lg flex items-center justify-center backdrop-blur-sm border border-teal-400/20 hover:bg-teal-400/20 transition-colors">
               <Code className="w-10 h-10 text-teal-400" />
             </div>
           </motion.div>
@@ -177,7 +204,7 @@ const Hero = () => {
             }}
             className="absolute bottom-1/4 left-1/4"
           >
-            <div className="w-20 h-20 bg-teal-400/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+            <div className="w-20 h-20 bg-teal-400/10 rounded-lg flex items-center justify-center backdrop-blur-sm border border-teal-400/20 hover:bg-teal-400/20 transition-colors">
               <Terminal className="w-10 h-10 text-teal-400" />
             </div>
           </motion.div>

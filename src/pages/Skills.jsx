@@ -1,13 +1,3 @@
-import {
-  Code,
-  Monitor,
-  Server,
-  Database,
-  Globe,
-  Lock,
-  Cpu,
-  GitBranch,
-} from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -30,10 +20,18 @@ import {
   SiMongodb,
   SiRedis,
 } from "react-icons/si";
+import {
+  Code,
+  Monitor,
+  Server,
+  Database,
+  Globe,
+  Lock,
+  GitBranch,
+} from "lucide-react";
 
 const Skills = () => {
   const [hovered, setHovered] = useState(null);
-  const [activeTab, setActiveTab] = useState("technical");
 
   const technicalIcons = [
     {
@@ -181,7 +179,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-20 px-8 bg-gradient-to-b from-black/20 to-black/30 min-h-screen">
+    <section className="min-h-screen py-20 px-8 bg-gradient-to-br from-teal-900/20 via-black/30 to-black/20">
       <div className="max-w-7xl mx-auto space-y-20">
         {/* Section Header */}
         <div className="text-center space-y-4">
@@ -249,13 +247,15 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group p-8 rounded-xl bg-white/5 hover:bg-white/10 transition-all border border-transparent hover:border-teal-400/20"
+              className="group p-8 rounded-xl bg-teal-400/5 hover:bg-teal-400/10 transition-all border border-transparent hover:border-teal-400/20"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-2 rounded-lg bg-teal-400/10 text-teal-400">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{category.name}</h3>
+                <h3 className="text-xl font-semibold text-teal-400">
+                  {category.name}
+                </h3>
               </div>
               <p className="text-gray-400 mb-6">{category.description}</p>
               <ul className="space-y-2">
