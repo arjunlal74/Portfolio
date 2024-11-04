@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Code, Laptop, Terminal } from "lucide-react";
 
-
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center px-8 overflow-hidden">
@@ -42,14 +41,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
               <button
                 className="px-8 py-4 bg-teal-400 text-gray-900 rounded-lg font-medium 
-                          hover:bg-teal-300 transition-all hover:scale-105 flex items-center justify-center gap-2"
+                      hover:bg-teal-300 transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Code className="w-5 h-5" />
                 View Projects
               </button>
               <button
                 className="px-8 py-4 border border-teal-400 text-teal-400 rounded-lg font-medium 
-                          hover:bg-teal-400/10 transition-all hover:scale-105 flex items-center justify-center gap-2"
+                      hover:bg-teal-400/10 transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 <Terminal className="w-5 h-5" />
                 Get in Touch
