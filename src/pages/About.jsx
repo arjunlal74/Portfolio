@@ -81,7 +81,7 @@ const About = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center px-8 overflow-hidden bg-gradient-to-br from-black/20 via-black/30 to-teal-900/20">
+    <section className="min-h-screen flex items-center px-8 overflow-hidden bg-[#222222]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
         {/* Left Content */}
         <motion.div

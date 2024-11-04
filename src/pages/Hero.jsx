@@ -22,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center px-8 overflow-hidden bg-gradient-to-b from-black/20 to-black/30">
+    <section className="min-h-screen flex items-center px-8 overflow-hidden bg-[#222222]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
         {/* Left Content */}
         <motion.div

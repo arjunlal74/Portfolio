@@ -179,7 +179,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="min-h-screen py-20 px-8 bg-gradient-to-br from-teal-900/20 via-black/30 to-black/20">
+    <section className="min-h-screen py-20 px-8 bg-[#222222]">
       <div className="max-w-7xl mx-auto space-y-20">
         {/* Section Header */}
         <div className="text-center space-y-4">

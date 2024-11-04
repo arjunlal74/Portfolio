@@ -68,7 +68,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-8 bg-gradient-to-b from-black/20 to-black/30 min-h-screen">
+    <section className="py-20 px-8 bg-[#222222] min-h-screen">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}
