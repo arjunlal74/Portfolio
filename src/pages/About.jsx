@@ -56,7 +56,7 @@ const About = () => {
   };
 
   return (
-    <section className="py-20 px-8 bg-gradient-to-b from-black/20 to-black/30">
+    <section className="py-20 px-8 bg-gradient-to-b overflow-hidden from-black/20 to-black/30 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - About Content */}
@@ -192,7 +192,7 @@ const About = () => {
 
             {/* Tech Stack Grid */}
             <motion.div
-              className="grid grid-cols-2 gap-4"
+              className="grid md:grid-cols-2 grid-cols-1 gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
